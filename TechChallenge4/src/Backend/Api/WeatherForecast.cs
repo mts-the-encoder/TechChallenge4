@@ -1,4 +1,4 @@
-namespace FiapFlicks
+namespace Api
 {
 	public class WeatherForecast
 	{

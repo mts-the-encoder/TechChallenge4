@@ -4,6 +4,7 @@ namespace Application.Communication.Responses;
 
 public class MovieResponse
 {
+    public int Id { get; set; }
     public string Director { get; set; }
     public string ReleasedYear { get; set; }
     public string Duration { get; set; }

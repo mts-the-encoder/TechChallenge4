@@ -1,3 +1,4 @@
+using Application;
 using Infrastructure.IoC;
 using Serilog;
 
@@ -7,8 +8,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddRouting(option => option.LowercaseUrls = true);
+
 //DI
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication(builder.Configuration);
+
 
 //Serilog
 builder.Host.UseSerilog((context, configuration) =>

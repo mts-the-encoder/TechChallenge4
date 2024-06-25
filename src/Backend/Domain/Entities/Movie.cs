@@ -10,4 +10,5 @@ public class Movie : EntityBase
 	public Country Country { get; set; }
 	public IEnumerable<Gender> Gender { get; set; }
 	public double Rate { get; set; }
+	public int UserId { get; set; }
 }

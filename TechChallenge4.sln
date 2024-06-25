@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Tests", "tests\Api.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils.Tests", "tests\Utils.Tests\Utils.Tests.csproj", "{720F18F9-221C-4E20-89DA-4F6769F31597}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Backend\Domain\Domain.csproj", "{69517DEA-725F-4017-BBB9-8F93EAD5EA50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Backend\Domain\Domain.csproj", "{69517DEA-725F-4017-BBB9-8F93EAD5EA50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

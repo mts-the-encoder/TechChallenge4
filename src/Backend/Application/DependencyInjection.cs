@@ -1,4 +1,5 @@
-﻿using Application.Services.UserSigned;
+﻿using Application.Services.Token;
+using Application.Services.UserSigned;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +11,7 @@ public static class DependencyInjection
     {
         AddHashIds(services, configuration);
         AddUserSigned(services);
-
+        AddTokenJWT(services, configuration);
     }
 
     private static void AddHashIds(IServiceCollection services, IConfiguration configuration)
@@ -24,7 +25,15 @@ public static class DependencyInjection
         });
     }
 
-    private static void AddUserSigned(IServiceCollection services)
+    private static void AddTokenJWT(IServiceCollection services, IConfiguration configuration)
+    {
+	    var lifeTime = configuration.GetRequiredSection("Configurations:Jwt:TimeInMinutes");
+	    var sectionKey = configuration.GetRequiredSection("Configurations:Jwt:TokenKey");
+
+	    services.AddScoped(option => new TokenService(int.Parse(lifeTime.Value), sectionKey.Value));
+    }
+
+	private static void AddUserSigned(IServiceCollection services)
     {
 	    services.AddScoped<IUserSigned, UserSigned>();
     }
